@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="46.901586">
+<testcase classname="To test end to end functionality of banking application" name="Test Login function of a Banking application" time="13.234295">
+<system-out><![CDATA[Given Login url of the application..........................................passed
+When User enters username as "username".....................................passed
+And User enters password as "manager_password"..............................passed
+Then User should be logged in successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Creation of new customer record" time="8.863043">
+<system-out><![CDATA[Given Manager is logged in..................................................passed
+When Manager clicks New Customer link.......................................passed
+And Manager enters values in the given fields...............................passed
+And User clicks the submit button...........................................passed
+Then New customer record should be created successfully.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Creation of new customer account" time="24.804248">
+<failure message="org.junit.ComparisonFailure: expected:&lt;[]&gt; but was:&lt;[77616]&gt;&#13;&#10;&#9;at org.junit.Assert.assertEquals(Assert.java:117)&#13;&#10;&#9;at org.junit.Assert.assertEquals(Assert.java:146)&#13;&#10;&#9;at stepdefinitions.NewAccount.new_customer_account_should_be_created_successfully(NewAccount.java:47)&#13;&#10;&#9;at ✽.New customer account for &quot;cust_id&quot; should be created successfully(file:src/test/resources/EndToEnd.feature:26)&#13;&#10;"><![CDATA[Given Manager is logged in..................................................passed
+When Manager clicks New Account link........................................passed
+And Manager enters valid "cust_id" in the customer id field.................passed
+And Manager chooses a valid account type....................................passed
+And Manager enters valid initial deposit amount.............................passed
+And User clicks the submit button...........................................passed
+Then New customer account for "cust_id" should be created successfully......failed
+
+StackTrace:
+org.junit.ComparisonFailure: expected:<[]> but was:<[77616]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepdefinitions.NewAccount.new_customer_account_should_be_created_successfully(NewAccount.java:47)
+	at ✽.New customer account for "cust_id" should be created successfully(file:src/test/resources/EndToEnd.feature:26)
+]]></failure>
+</testcase>
+</testsuite>
